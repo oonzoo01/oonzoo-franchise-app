@@ -7,7 +7,7 @@
     </queries>
 
     <application
-        android:label="Franchise Partner App"
+        android:label="Oonzoo Franchise"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
