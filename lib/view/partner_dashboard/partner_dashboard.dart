@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:app_version_update/app_version_update.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,6 +6,7 @@ import 'package:salesapp/constant/colors/colors.dart';
 import 'package:salesapp/provider/franchise_dashboard_provider/franchise_dashboard_provider.dart';
 import 'package:salesapp/provider/franchise_member_provider/franchise_member_provider.dart';
 import 'package:salesapp/provider/franchise_onboard_sotre_provider/franchise_onboard_store_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../common_widget/custom_poppins.dart';
 import '../../constant/responsive.dart';
 import '../../provider/profile_provider/profile_provider.dart';
@@ -42,35 +41,102 @@ class _DashBoardPageState extends State<DashBoardPage> {
 
   void _verifyVersion() async {
     try {
-      await AppVersionUpdate.checkForUpdates(appleId: '6463752059')
-          .then((data) async {
+      await AppVersionUpdate.checkForUpdates(
+        appleId: '6463752059',
+        playStoreId: 'com.oonzoo.franchise',
+      ).then((data) async {
         if (data.canUpdate!) {
-          await AppVersionUpdate.showAlertUpdate(
-            appVersionResult: data,
-            mandatory: true,
+          await showDialog(
             context: context,
-            backgroundColor: Colors.grey[200],
-            title: 'New Update Available',
-            content:
-                'Please update to the latest version to enjoy all the updated features',
-            updateButtonText: 'UPDATE',
-            titleTextStyle: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w600,
-              fontSize: 20.0,
-            ),
-            contentTextStyle: const TextStyle(
-              color: Colors.black,
-              fontSize: 17,
-              fontWeight: FontWeight.w500,
-            ),
+            builder: (context) {
+              return PopScope(
+                canPop: false,
+                child: AlertDialog(
+                  title: const CustomPoppinsText(
+                      text: 'New Update Available',
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black),
+                  content: const CustomPoppinsText(
+                    text:
+                        'Please update to the latest version to enjoy all the updated features',
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black,
+                  ),
+                  actions: [
+                    TextButton(
+                      style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(Colors.green)),
+                      onPressed: () => launchUrl(Uri.parse(data.storeUrl!),
+                          mode: LaunchMode.externalApplication),
+                      child: const CustomPoppinsText(
+                        text: 'UPDATE',
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              );
+            },
           );
+          // await AppVersionUpdate.showAlertUpdate(
+          //   appVersionResult: data,
+          //   mandatory: true,
+          //   context: context,
+          //   backgroundColor: Colors.grey[200],
+          //   title: 'New Update Available',
+          //   content:
+          //       'Please update to the latest version to enjoy all the updated features',
+          //   updateButtonText: 'UPDATE',
+          //   titleTextStyle: const TextStyle(
+          //     color: Colors.black,
+          //     fontWeight: FontWeight.w600,
+          //     fontSize: 20.0,
+          //   ),
+          //   contentTextStyle: const TextStyle(
+          //     color: Colors.black,
+          //     fontSize: 17,
+          //     fontWeight: FontWeight.w500,
+          //   ),
+          // );
         }
       });
-    } catch (e) {
-      log(e.toString());
-    }
+    } catch (e) {}
   }
+
+  // void _verifyVersion() async {
+  //   try {
+  //     await AppVersionUpdate.checkForUpdates(appleId: '6463752059')
+  //         .then((data) async {
+  //       if (data.canUpdate!) {
+  //         await AppVersionUpdate.showAlertUpdate(
+  //           appVersionResult: data,
+  //           mandatory: true,
+  //           context: context,
+  //           backgroundColor: Colors.grey[200],
+  //           title: 'New Update Available',
+  //           content:
+  //               'Please update to the latest version to enjoy all the updated features',
+  //           updateButtonText: 'UPDATE',
+  //           titleTextStyle: const TextStyle(
+  //             color: Colors.black,
+  //             fontWeight: FontWeight.w600,
+  //             fontSize: 20.0,
+  //           ),
+  //           contentTextStyle: const TextStyle(
+  //             color: Colors.black,
+  //             fontSize: 17,
+  //             fontWeight: FontWeight.w500,
+  //           ),
+  //         );
+  //       }
+  //     });
+  //   } catch (e) {
+  //     log(e.toString());
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
