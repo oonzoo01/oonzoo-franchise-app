@@ -25,8 +25,9 @@ class _NonWhiteLabelSearchScreenState extends State<NonWhiteLabelSearchScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (val) {
         Navigator.pop(context);
         Provider.of<DashboardProvider>(context, listen: false)
             .clearSearchField();
@@ -35,7 +36,6 @@ class _NonWhiteLabelSearchScreenState extends State<NonWhiteLabelSearchScreen> {
                 context,
                 Provider.of<DashboardProvider>(context, listen: false)
                     .pageNumber);
-        return true;
       },
       child: Scaffold(
         appBar: PreferredSize(

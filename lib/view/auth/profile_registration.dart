@@ -25,13 +25,13 @@ class _ProfileRegistrationState extends State<ProfileRegistration> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (val) {
         Provider.of<RegisterProvider>(context, listen: false).clearAllForm();
         Provider.of<RegisterProvider>(context, listen: false)
             .clearAllRegistorForm();
         Navigator.pop(context);
-        return true;
       },
       child: Scaffold(
         bottomNavigationBar: Padding(

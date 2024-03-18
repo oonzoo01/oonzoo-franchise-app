@@ -144,8 +144,9 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (val) {
         // if (Provider.of<AppBarProvider>(context, listen: false).isAppbar) {
         //   Provider.of<AppBarProvider>(context, listen: false).setValue(false);
         //   Provider.of<DashboardProvider>(context, listen: false)
@@ -160,7 +161,6 @@ class _DashboardPageState extends State<DashboardPage> {
         //     ),
         //   );
         // } else {}
-        return true;
       },
       child: Scaffold(
         drawer: const SDNavigationDrawer(),

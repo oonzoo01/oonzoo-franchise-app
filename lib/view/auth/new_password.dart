@@ -34,12 +34,12 @@ class _NewPassScreenState extends State<NewPassScreen> {
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (val) {
         Provider.of<ForgotPasswordProvider>(context, listen: false)
             .clearFrom(context);
         Navigator.pop(context);
-        return true;
       },
       child: Scaffold(
         backgroundColor: kwhite,
