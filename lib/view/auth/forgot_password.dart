@@ -28,12 +28,12 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (val) {
         Provider.of<ForgotPasswordProvider>(context, listen: false)
             .clearFrom(context);
         Navigator.pop(context);
-        return true;
       },
       child: Scaffold(
         backgroundColor: kwhite,

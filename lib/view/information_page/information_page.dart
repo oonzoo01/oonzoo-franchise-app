@@ -271,15 +271,15 @@ class _InformationPageState extends State<InformationPage> {
   Widget build(BuildContext context) {
     final themeChange = Provider.of<ThemeProvider>(context);
 
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (val) {
         if (!Provider.of<FranchiseMemberProvider>(context, listen: false)
             .isEdit) {
           Provider.of<FranchiseMemberProvider>(context, listen: false)
               .setEditProfile();
         }
         Navigator.pop(context);
-        return true;
       },
       child: Scaffold(
         backgroundColor: themeChange.theme == ThemeMode.light

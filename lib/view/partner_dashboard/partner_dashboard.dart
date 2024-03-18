@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:app_version_update/app_version_update.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -81,62 +83,12 @@ class _DashBoardPageState extends State<DashBoardPage> {
               );
             },
           );
-          // await AppVersionUpdate.showAlertUpdate(
-          //   appVersionResult: data,
-          //   mandatory: true,
-          //   context: context,
-          //   backgroundColor: Colors.grey[200],
-          //   title: 'New Update Available',
-          //   content:
-          //       'Please update to the latest version to enjoy all the updated features',
-          //   updateButtonText: 'UPDATE',
-          //   titleTextStyle: const TextStyle(
-          //     color: Colors.black,
-          //     fontWeight: FontWeight.w600,
-          //     fontSize: 20.0,
-          //   ),
-          //   contentTextStyle: const TextStyle(
-          //     color: Colors.black,
-          //     fontSize: 17,
-          //     fontWeight: FontWeight.w500,
-          //   ),
-          // );
         }
       });
-    } catch (e) {}
+    } catch (e) {
+      log(e.toString());
+    }
   }
-
-  // void _verifyVersion() async {
-  //   try {
-  //     await AppVersionUpdate.checkForUpdates(appleId: '6463752059')
-  //         .then((data) async {
-  //       if (data.canUpdate!) {
-  //         await AppVersionUpdate.showAlertUpdate(
-  //           appVersionResult: data,
-  //           mandatory: true,
-  //           context: context,
-  //           backgroundColor: Colors.grey[200],
-  //           title: 'New Update Available',
-  //           content:
-  //               'Please update to the latest version to enjoy all the updated features',
-  //           updateButtonText: 'UPDATE',
-  //           titleTextStyle: const TextStyle(
-  //             color: Colors.black,
-  //             fontWeight: FontWeight.w600,
-  //             fontSize: 20.0,
-  //           ),
-  //           contentTextStyle: const TextStyle(
-  //             color: Colors.black,
-  //             fontSize: 17,
-  //             fontWeight: FontWeight.w500,
-  //           ),
-  //         );
-  //       }
-  //     });
-  //   } catch (e) {
-  //     log(e.toString());
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {

@@ -53,11 +53,11 @@ class VerificationScreenState extends State<VerificationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: true,
+      onPopInvoked: (val) {
         Provider.of<RegisterProvider>(context, listen: false).timeDispose();
         Navigator.pop(context);
-        return true;
       },
       child: Scaffold(
         backgroundColor: Colors.grey.shade200,
