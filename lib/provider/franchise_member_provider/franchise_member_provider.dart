@@ -413,7 +413,7 @@ class FranchiseMemberProvider extends ChangeNotifier {
   }
 
   void fetchAllFranchiseMember() async {
-    log('fetch all franchise');
+    // log('fetch all franchise');
 
     notifyListeners();
     await APIService.getAllFranchiseMember("1", "100").then((list) {

@@ -85,7 +85,7 @@ class DashboardProvider extends ChangeNotifier {
   }
 
   void fetchFreelancerOnboardStores(ctx, page) async {
-    if (page == 1) {
+    if (page == 1) {  
       _isLoading = true;
       _onBoardStoreList.clear();
       notifyListeners();

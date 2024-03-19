@@ -30,29 +30,21 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   api_cache_manager: ^1.0.2
-  azlistview: ^2.0.0
   cached_network_image: ^3.3.1
   cupertino_icons: ^1.0.2
-  # document_scanner_flutter: 0.2.7
   dotted_border: ^2.0.0+2
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   flutter_slidable: ^3.0.1
-  flutter_svg: ^2.0.7
   fluttertoast: ^8.2.1
   freezed_annotation: ^2.1.0
-  geocoding: ^2.0.5
   google_fonts: 4.0.4
-  google_maps_flutter: ^2.1.12
   image_picker: ^0.8.6+1
   intl: ^0.18.0
-  location: ^4.4.0
   lottie: ^2.2.0
   path_provider: ^2.0.12
-  pdf: ^3.10.4
-  printing: ^5.11.0
   provider: ^6.0.5
   share_plus: ^7.0.2
   shared_preferences: ^2.0.17
@@ -62,15 +54,11 @@ dependencies:
   package_info_plus: ^4.0.2
   calendar_date_picker2: ^0.5.2
   unique_identifier: ^0.3.0
-  qr_code_scanner: ^1.0.1
-  qr_flutter: ^4.1.0
   screenshot: ^2.1.0
   syncfusion_flutter_signaturepad:
   flutter_styled_toast: ^2.1.3
   url_launcher: ^6.1.11
   dropdown_button2: ^2.3.9
-  flutter_pdfview: ^1.3.1
-  pdf_render: ^1.4.0
   syncfusion_flutter_pdfviewer: ^20.4.54
   country_picker: ^2.0.21
   country_code_picker: ^3.0.0
