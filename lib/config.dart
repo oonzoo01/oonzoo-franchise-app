@@ -55,6 +55,9 @@ class Config {
   static const freelancerAuditRequestApi =
       "$apiEndpoint/partner/store-onboard-audit-request"; // done
 
+  static const customerAccountDeleteApi =
+      '$apiEndpoint/customer-delete-account';
+
   static const String imageURL =
       'https://oonzoo-backend-storage.s3.us-west-2.amazonaws.com/';
 

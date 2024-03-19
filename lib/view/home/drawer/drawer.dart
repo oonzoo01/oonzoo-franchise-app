@@ -12,6 +12,7 @@ import '../../../constant/text/text.dart';
 import '../../../provider/theme_provider.dart';
 import '../../../utils/language/local_storage.dart';
 import '../../customersupport/customer_support.dart';
+import '../../delete_account/delete_account.dart';
 import '../../settings/settings.dart';
 import '../../wallet_screen/wallet_screen.dart';
 import '../dashboard.dart';
@@ -180,6 +181,20 @@ class SDNavigationDrawer extends StatelessWidget {
                 },
                 icon: Icons.contact_support,
                 text: tr(context).support,
+              ),
+              DrawerListWidget(
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<DeleteAccountScreen>(
+                      builder: (BuildContext context) =>
+                          const DeleteAccountScreen(),
+                    ),
+                  );
+                },
+                icon: Icons.delete,
+                text: tr(context).delete_account,
               ),
               const Spacer(),
               Padding(

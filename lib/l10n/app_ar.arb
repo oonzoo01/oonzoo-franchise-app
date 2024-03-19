@@ -66,5 +66,6 @@
     "you_are_on_break": "أنت في فترة راحة الآن",
     "apply_for_whitelabel": "التقدم بطلب للحصول على العلامة البيضاء",
     "display_settings": "اعدادات العرض",
-    "dark_mode":"الوضع المظلم"
+    "dark_mode": "الوضع المظلم",
+    "delete_account": "حذف الحساب"
 }

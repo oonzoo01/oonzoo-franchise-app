@@ -66,5 +66,6 @@
     "you_are_on_break": "You are on a break now",
     "apply_for_whitelabel": "Apply for whitelabel",
     "display_settings": "Display Settings",
-    "dark_mode": "Dark Mode"
+    "dark_mode": "Dark Mode",
+    "delete_account": "Delete Account"
 }

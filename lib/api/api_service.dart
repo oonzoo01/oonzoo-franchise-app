@@ -1057,4 +1057,40 @@ class APIService {
       return null;
     }
   }
+
+  static deleteCustomerAccountApi() async {
+    final loginDetails = await SharedService.loginDetails();
+
+    try {
+      Map<String, String> requestHeaders = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ${loginDetails?.token.toString()}'
+      };
+
+      var url = Uri.https(
+        Config.apiURL,
+        Config.customerAccountDeleteApi,
+      );
+
+      var response = await client.post(
+        url,
+        headers: requestHeaders,
+      );
+
+      log(response.body);
+
+      if (response.statusCode == 200) {
+        // final data = jsonDecode(response.body);
+
+        return true;
+      } else if (response.statusCode == 401) {
+        SharedService.logout();
+        return false;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
 }

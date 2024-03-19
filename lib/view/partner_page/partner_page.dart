@@ -21,6 +21,7 @@ import '../../provider/profile_provider/profile_provider.dart';
 import '../../provider/theme_provider.dart';
 import '../../utils/language/local_storage.dart';
 import '../change_password/change_password.dart';
+import '../delete_account/delete_account.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -216,6 +217,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 ),
                                               );
                                             } else if (index == 5) {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute<
+                                                    DeleteAccountScreen>(
+                                                  builder: (BuildContext
+                                                          context) =>
+                                                      const DeleteAccountScreen(),
+                                                ),
+                                              );
+                                            } else if (index == 6) {
                                               showDialog(
                                                 context: context,
                                                 builder: (context) =>
@@ -477,6 +488,7 @@ class ListModel {
       ListModel(Icons.edit, tr(navigatorKey.currentContext!).edit_profile),
       ListModel(
           Icons.local_offer, tr(navigatorKey.currentContext!).incentive_offer),
+      ListModel(Icons.delete, tr(navigatorKey.currentContext!).delete_account),
       ListModel(Icons.logout, tr(navigatorKey.currentContext!).logout),
     ];
   }

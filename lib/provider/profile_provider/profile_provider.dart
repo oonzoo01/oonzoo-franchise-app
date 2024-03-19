@@ -70,4 +70,11 @@ class ProfileProvider extends ChangeNotifier {
       notifyListeners();
     });
   }
+
+  deleteCustomerAccount(callback) async {
+    final res = await APIService.deleteCustomerAccountApi();
+    callback(res);
+
+    notifyListeners();
+  }
 }

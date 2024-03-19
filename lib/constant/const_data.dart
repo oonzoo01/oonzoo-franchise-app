@@ -399,9 +399,9 @@ class ConstData {
     {"code": "1784", "country": "VC"}, //
     {"code": "685", "country": "WS"}, //
     {"code": "378", "country": "SM"}, //
-    {"code": "239", "country": "ST"},//
+    {"code": "239", "country": "ST"}, //
     {"code": "966", "country": "SA"}, //
-    {"code": "221", "country": "SN"},//
+    {"code": "221", "country": "SN"}, //
     {"code": "381", "country": "RS"}, //
     {"code": "248", "country": "SC"}, //
     {"code": "971", "country": "AE"}, //
@@ -456,5 +456,32 @@ class ConstData {
     {"code": "260", "country": "ZM"}, //
     {"code": "263", "country": "ZW"}, //
     {"code": "358", "country": "AX"}, //
+  ];
+
+  static List<String> deleteHeading = [
+    '1. Account Deletion Request:',
+    '2. Irrevocable Deletion:',
+    '3. Cancellation of Deletion:',
+    '4. Pending Transactions:',
+    '5. Data Backup Responsibility:',
+    '6. Third-Party Accounts:',
+    '7. Termination of Services:',
+    '8. Discontinuation of Communications:',
+    '9. Legal and Regulatory Obligations:',
+    '10. Changes to Terms:',
+    '11. Contact Information:',
+  ];
+  static List<String> deleteAcceptance = [
+    "To initiate the account deletion process, the user must submit a formal request through the Application's designated account deletion interface. This request will be reviewed and processed by the Oonzoo support team.",
+    'Once the user account deletion request is confirmed and processed, please note that the action is irreversible. All data associated with the account, including personal information, purchase history, and preferences, will be permanently deleted from our systems.',
+    'Once the account deletion process is initiated, it cannot be canceled or reversed. Please ensure that you have backed up any important data or information before proceeding with the account deletion request.',
+    " Oonzoo is not responsible for the backup of any user data, content, or information. It is the user's responsibility to save or backup any data they wish to retain before initiating the account deletion process.,"
+        "If the user's Oonzoo account is linked to any third-party applications or services, unlinking or deactivating those accounts is the user's responsibility. Oonzoo will not be liable for any residual information in third-party accounts.",
+    "Account deletion will result in the termination of all services associated with the user's account. This includes access to purchased products, saved items, and personalized recommendations."
+        "Upon account deletion, the user will no longer receive any communication from Oonzoo, including promotional emails, order updates, and newsletters.",
+    "Oonzoo reserves the right to retain certain user data for legal and regulatory compliance purposes even after account deletion. Any data retained will be subject to Oonzoo's Privacy Policy.",
+    "Oonzoo may update or modify these Terms at any time without prior notice. Users are encouraged to review these Terms periodically for any changes that may affect the account deletion process.",
+    "For any inquiries or concerns regarding the account deletion process or these Terms, users can contact the Oonzoo support team at support@oonzoo.ae.",
+    'You will no longer receive any transactional or promotional communication from oonzoo and its associated websites and mobile application.',
   ];
 }
